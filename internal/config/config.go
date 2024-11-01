@@ -15,7 +15,7 @@ type Config struct {
 
 // MustLoad func loaded and return Config type
 func MustLoad() *Config {
-	configPath := os.Getenv("CONFIG_PATH")
+	configPath := os.Getenv("CONFIG_BMAPP_PATH")
 	if configPath == "" {
 		log.Fatal("CONFIG_PATH is not set")
 	}
