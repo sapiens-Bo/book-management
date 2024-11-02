@@ -22,6 +22,7 @@ func main() {
 	//newPath := flag.String("npath", "", "flag for create a new path for books directory")
 	addBook := flag.String("add", "", "flag for add a book to dir")
 	getBooks := flag.Bool("gbooks", false, "flag for output books list")
+	openBook := flag.String("open", "", "flag for open the book")
 
 	flag.Parse()
 	if *addBook != "" {
@@ -29,5 +30,8 @@ func main() {
 	}
 	if *getBooks {
 		books.ShowBooks()
+	}
+	if *openBook != "" {
+		books.OpenBook(*openBook)
 	}
 }

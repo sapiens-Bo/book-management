@@ -11,6 +11,7 @@ import (
 // Config is struct for config file
 type Config struct {
 	Path string `yaml:"path" path-default:"~/Books"`
+	App  string `yaml:"app" app-default:"zathura"`
 }
 
 // MustLoad func loaded and return Config type
