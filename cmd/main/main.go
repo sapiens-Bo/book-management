@@ -23,6 +23,7 @@ func main() {
 	addBook := flag.String("add", "", "flag for add a book to dir")
 	getBooks := flag.Bool("gbooks", false, "flag for output books list")
 	openBook := flag.String("open", "", "flag for open the book")
+	openLast := flag.Bool("last", false, "flag for open the last book")
 
 	flag.Parse()
 	if *addBook != "" {
@@ -33,5 +34,8 @@ func main() {
 	}
 	if *openBook != "" {
 		books.OpenBook(*openBook)
+	}
+	if *openLast {
+		books.OpenLast()
 	}
 }

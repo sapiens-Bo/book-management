@@ -83,7 +83,19 @@ func OpenBook(name string) {
 		if err != nil {
 			log.Fatalf("error open the book:%s", err)
 		}
+		cfg.SetLast(name)
 	} else {
 		fmt.Printf("%s not exists", name)
+	}
+}
+
+// OpenLast func opened is last book
+func OpenLast() {
+	cfg := config.MustLoad()
+	if cfg.Last == "" {
+		fmt.Printf("sorry, but field \"last\" is void")
+		os.Exit(1)
+	} else {
+		OpenBook(cfg.Last)
 	}
 }
