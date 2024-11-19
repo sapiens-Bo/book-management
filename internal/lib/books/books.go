@@ -65,6 +65,16 @@ func ShowBooks() {
 	}
 }
 
+func BooksName() []string {
+	books := Books()
+	var booksName []string
+	for _, book := range books {
+		booksName = append(booksName, book.Name())
+	}
+
+	return booksName
+}
+
 func isExists(name string) bool {
 	books := Books()
 	for _, book := range books {

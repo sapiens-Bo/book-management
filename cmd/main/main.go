@@ -4,6 +4,7 @@ package main
 import (
 	"flag"
 
+	"github.com/sapiens/book-management/cmd/bubble"
 	"github.com/sapiens/book-management/internal/lib/books"
 )
 
@@ -19,7 +20,7 @@ import (
 // }
 
 func main() {
-	//newPath := flag.String("npath", "", "flag for create a new path for books directory")
+	// newPath := flag.String("npath", "", "flag for create a new path for books directory")
 	addBook := flag.String("add", "", "flag for add a book to dir")
 	getBooks := flag.Bool("gbooks", false, "flag for output books list")
 	openBook := flag.String("open", "", "flag for open the book")
@@ -30,7 +31,8 @@ func main() {
 		books.AddBook(*addBook)
 	}
 	if *getBooks {
-		books.ShowBooks()
+		// books.ShowBooks()
+		bubble.Run()
 	}
 	if *openBook != "" {
 		books.OpenBook(*openBook)
